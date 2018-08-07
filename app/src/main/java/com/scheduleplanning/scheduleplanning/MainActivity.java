@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import database.DB;
 import model.User;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     /** Called when the user taps the Send button */
     public void login(View view) {
-        Intent intent = new Intent(this, ListMessageActivity.class);
+        //Intent intent = new Intent(this, ...Activity.class);
         EditText username = findViewById(R.id.username_login);
         EditText password = findViewById(R.id.password_login);
         // TODO: Preguntar a la api
@@ -33,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
         if (user == null) {
             Toast.makeText(this, "Usuario o contraseña incorrecta", Toast.LENGTH_LONG).show();
         } else {
-            intent.putExtra(EXTRA_SCHEDULE, user.getSchedule().toArray());
-            startActivity(intent);
+            //intent.putExtra(EXTRA_SCHEDULE, user.getSchedule().toArray());
+            //startActivity(intent);
         }
     }
 }
