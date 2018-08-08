@@ -1,8 +1,11 @@
-package model;
+package com.scheduleplanning.model;
 
+import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
 import java.util.List;
 
-public class Course {
+public class Course implements Serializable {
     public final static String NRC = "nrc";
     public final static String CLASS_NAME = "class";
     public final static String COURSE = "course";
@@ -21,6 +24,7 @@ public class Course {
     public final static String ATTR = "attr";
 
     private String nrc;
+    @SerializedName("class")
     private String className;
     private String course;
     private int section;
@@ -28,13 +32,16 @@ public class Course {
     private String title;
     private int limit;
     private int registered;
+    @SerializedName("empty")
     private int available;
     private List<Schedule> schedules;
     private List<Instructor> instructors;
     private String cycle;
     private String campus;
     private List<Class> compl;
+    @SerializedName("is_compl")
     private boolean isCompl;
+    private List<String> attr;
 
     public Course() {
     }
@@ -157,5 +164,13 @@ public class Course {
 
     public void setCompl(boolean compl) {
         isCompl = compl;
+    }
+
+    public List<String> getAttr() {
+        return attr;
+    }
+
+    public void setAttr(List<String> attr) {
+        this.attr = attr;
     }
 }

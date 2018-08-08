@@ -1,6 +1,8 @@
-package model;
+package com.scheduleplanning.model;
 
-public class Instructor {
+import java.io.Serializable;
+
+public class Instructor implements Serializable {
     public final static String NAME = "name";
     public final static String IND = "ind";
 

@@ -1,6 +1,10 @@
-package model;
+package com.scheduleplanning.model;
 
-public class Schedule {
+import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
+
+public class Schedule implements Serializable {
     public final static String TIME_INI = "time_ini";
     public final static String TIME_FIN = "time_fin";
     public final static String CLASSROOM = "classroom";
@@ -14,17 +18,28 @@ public class Schedule {
     public final static String DATE_INI = "date_ini";
     public final static String DATE_FIN = "date_fin";
 
+    @SerializedName("time_ini")
     private String timeIni;
+    @SerializedName("time_fin")
     private String timeFin;
     private String classroom;
+    @SerializedName("L")
     private String l;
+    @SerializedName("M")
     private String m;
+    @SerializedName("I")
     private String i;
+    @SerializedName("J")
     private String j;
+    @SerializedName("V")
     private String v;
+    @SerializedName("S")
     private String s;
+    @SerializedName("D")
     private String d;
+    @SerializedName("date_ini")
     private String dateIni;
+    @SerializedName("date_fin")
     private String dateFin;
 
     public Schedule() {
